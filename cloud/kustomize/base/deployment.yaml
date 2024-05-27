@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-edgecond-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      deployment: edgecond-backend
+  template:
+    metadata:
+      labels:
+        deployment: edgecond-backend
+    spec:
+      serviceAccountName: <PATCH_ME>
+      volumes:
+        - name: vol-edgecond
+          persistentVolumeClaim:
+            claimName: pvc-edgecond
+        - name: vol-edgecond-secret
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: spc-edge-conductor
+      containers:
+        - name: edge-conductor
+          image: <PATCH_ME>
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: configmap-edgecond
+            - secretRef:
+                name: secret-edgecond
+          volumeMounts:
+            - name: vol-edgecond
+              subPath: data
+              mountPath: /app/data
+            - name: vol-edgecond
+              subPath: log
+              mountPath: /app/log
+            - name: vol-edgecond-secret
+              mountPath: /mnt/secrets-store
+              readOnly: true
+      nodeSelector:
+        nodegroup: <PATCH_ME>
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-edgecond-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      deployment: edgecond-frontend
+  template:
+    metadata:
+      labels:
+        deployment: edgecond-frontend
+    spec:
+      serviceAccountName: <PATCH_ME>
+      containers:
+        - name: edge-conductor 
+          image: <PATCH_ME>
+          ports:
+            - containerPort: 80 
+          envFrom:
+            - configMapRef:
+                name: configmap-edgecond
+      nodeSelector:
+        nodegroup: <PATCH_ME>

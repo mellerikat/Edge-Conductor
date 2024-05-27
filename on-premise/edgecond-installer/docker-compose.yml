@@ -1,0 +1,131 @@
+version: "3"
+
+services:
+  backend:
+    image: ${DOCKER_REGISTRY-}ai-advisor/edge-conductor/backend:${TAG-latest}
+    container_name: aiadvisor-edge_conductor-backend-${PREFIX}-${CONTAINER_NAME-default}
+    environment:
+      - HOSTUID
+      - HOSTGID
+      - TAG
+    volumes:
+      - ./log/backend:/app/log
+      - ./data:/app/data
+      - ./config/.env.${PROFILE-dev}:/app/.env
+      -  /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
+    restart: unless-stopped
+    depends_on:
+      - db
+    logging:
+      driver: local
+      options:
+        max-size: "10m"
+        max-file: "3"
+        compress: "false"
+    profiles:
+      - basic
+      - standard
+      - advanced
+
+  db:
+    image: ${DOCKER_REGISTRY-}ai-advisor/edge-conductor/mysql:8.0.21
+    container_name: aiadvisor-edge_conductor-mysql-${PREFIX}-${CONTAINER_NAME-default}
+    environment:
+      - HOSTUID
+      - HOSTGID
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PSWD}
+    volumes:
+      - ./mysql:/var/lib/mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+      - --sql-mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+      - --information-schema-stats-expiry=0
+      - --skip-innodb-use-native-aio
+    cap_add:
+      - SYS_NICE
+    ports:
+      - ${MYSQL_PORT}:3306
+    restart: unless-stopped
+    logging:
+      driver: none
+    profiles:
+      - basic
+      - standard
+      - advanced
+
+  frontend:
+    image: ${DOCKER_REGISTRY-}ai-advisor/edge-conductor/frontend:${TAG-latest}
+    container_name: aiadvisor-edge_conductor-frontend-${PREFIX}-${CONTAINER_NAME-default}
+    ports:
+      - ${FRONTEND_PORT}:80
+    environment:
+      - BACKEND_ENDPOINT=${SERVER_PROTOCOL}://${SERVER_IP}:${BACKEND_PORT}
+    restart: on-failure
+    depends_on:
+      - backend
+    profiles:
+      - basic
+      - standard
+      - advanced
+
+  registry_proxy:
+    image: registry:2.8.2
+    container_name: aiadvisor-edge_conductor-registry_proxy-${PREFIX}-${CONTAINER_NAME-default}
+    user: "${HOSTUID}:${HOSTGID}"
+    environment:
+      - REGISTRY_PROXY_REMOTEURL=${APP_REGISTRY_REMOTE_URL-}
+    volumes:
+      - ./registry_proxy:/var/lib/registry
+    ports:
+      - ${APP_REGISTRY_PROXY_PORT:-5000}:5000
+    restart: unless-stopped
+    logging:
+      driver: local
+      options:
+        max-size: "10m"
+        max-file: "3"
+        compress: "false"
+    profiles:
+      - standard
+      - advanced
+
+
+  registry:
+    image: registry:2.8.2
+    container_name: aiadvisor-edge_conductor-registry-${PREFIX}-${CONTAINER_NAME-default}
+    volumes:
+      - ./registry:/var/lib/registry
+    ports:
+      - ${DOCKER_REGISTRY_PORT:-5001}:5000
+    restart: unless-stopped
+    logging:
+      driver: local
+      options:
+        max-size: "10m"
+        max-file: "3"
+        compress: "false"
+    profiles:
+      - standard
+      - advanced
+
+
+  otel:
+    image: quay.io/signalfx/splunk-otel-collector:0.67.0
+    container_name: aiadvisor-edge_conductor-otelcollector-${PREFIX}-${CONTAINER_NAME-default}
+    user: "${HOSTUID}:${HOSTGID}"
+    environment:
+      - OTEL_TOKEN=${OTEL_TOKEN-}
+      - OTEL_ENDPOINT=${OTEL_ENDPOINT-}
+      - OTEL_SOURCE=${OTEL_SOURCE-}
+      - OTEL_INDEX=${OTEL_INDEX-}
+    command: ["--config=/etc/otel-collector-config.yml"]
+    volumes:
+      - ./otel/otel-collector-config.yml:/etc/otel-collector-config.yml
+      - ./data:/data
+    ports:
+      - ${OTEL_PORT:-8088}:8088
+    profiles:
+      - advanced

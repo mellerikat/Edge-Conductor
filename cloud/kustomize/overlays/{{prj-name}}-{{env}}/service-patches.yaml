@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-edgecond-backend
+spec:
+  ports:
+    - port: {{31020+N}}
+      targetPort: 31020
+      protocol: TCP
+      nodePort: {{31020+N}}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-edgecond-frontend
+spec:
+  ports:
+    - port: {{31010+N}}
+      targetPort: 80
+      protocol: TCP
+      nodePort: {{31010+N}}

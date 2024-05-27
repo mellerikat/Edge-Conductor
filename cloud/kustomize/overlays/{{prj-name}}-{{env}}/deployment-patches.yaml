@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-edgecond-backend
+spec:
+  template:
+    spec:
+      serviceAccountName : {{eks-service-account}}
+      containers:
+      - name: edge-conductor
+        image: {{repository-backend}}:{{service-version}}
+      nodeSelector:
+        nodegroup: {{eks-node-group}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-edgecond-frontend
+spec:
+  template:
+    spec:
+      serviceAccountName : {{eks-service-account}}
+      containers:
+      - name: edge-conductor
+        image: {{repository-frontend}}:{{service-version}}
+      nodeSelector:
+        nodegroup: {{eks-node-group}}

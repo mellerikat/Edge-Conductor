@@ -19,4 +19,4 @@ Users can select training datasets and request updates to models. The performanc
 # User Guide
 - [Edges](https://mellerikat.com/user_guide/ai_operator_guide/edge_conductor/edges)
 - [Dataset](https://mellerikat.com/user_guide/ai_operator_guide/edge_conductor/dataset)
-- [Stream](https://mellerikat.com/user_guide/ai_operator_guide/edge_conductor/streams)
+- [Streams](https://mellerikat.com/user_guide/ai_operator_guide/edge_conductor/streams)

@@ -2,8 +2,28 @@ apiVersion: v1
 entries:
   edge-conductor:
   - apiVersion: v2
+    appVersion: 2.2.1
+    created: "2024-10-21T05:33:55.655753779Z"
+    dependencies:
+    - condition: backend.enabled
+      name: backend
+      repository: ""
+    - condition: frontend.enabled
+      name: frontend
+      repository: ""
+    description: A Helm chart for Edge Conductor
+    digest: b8587873364ecf13c2dd642fcd99600d173ddc63ec1156fe471421cdb603361c
+    maintainers:
+    - email: youngjun.jeon@lge.com
+      name: youngjun.jeon
+    name: edge-conductor
+    type: application
+    urls:
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: 2.3.0
-    created: "2024-10-17T06:24:07.119643409Z"
+    created: "2024-10-21T05:33:55.651982276Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -19,11 +39,11 @@ entries:
     name: edge-conductor
     type: application
     urls:
-    - s3://s3-an2-meerkat-dev-edgecond-deploy-tools/helm/edge-conductor-0.2.0.tgz/edge-conductor-0.2.0.tgz
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
     appVersion: 2.3.0-rc3
-    created: "2024-10-17T06:24:07.111319584Z"
+    created: "2024-10-21T05:33:55.637936573Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -39,11 +59,11 @@ entries:
     name: edge-conductor
     type: application
     urls:
-    - s3://s3-an2-meerkat-dev-edgecond-deploy-tools/helm/edge-conductor-0.2.0.tgz/edge-conductor-0.1.17.tgz
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.17.tgz
     version: 0.1.17
   - apiVersion: v2
     appVersion: 2.3.0-rc2
-    created: "2024-10-17T06:24:07.110585031Z"
+    created: "2024-10-21T05:33:55.63567027Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -59,11 +79,11 @@ entries:
     name: edge-conductor
     type: application
     urls:
-    - s3://s3-an2-meerkat-dev-edgecond-deploy-tools/helm/edge-conductor-0.2.0.tgz/edge-conductor-0.1.16.tgz
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.16.tgz
     version: 0.1.16
   - apiVersion: v2
     appVersion: 2.3.0-rc1
-    created: "2024-10-17T06:24:07.109831418Z"
+    created: "2024-10-21T05:33:55.633360214Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -79,11 +99,11 @@ entries:
     name: edge-conductor
     type: application
     urls:
-    - s3://s3-an2-meerkat-dev-edgecond-deploy-tools/helm/edge-conductor-0.2.0.tgz/edge-conductor-0.1.15.tgz
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.15.tgz
     version: 0.1.15
   - apiVersion: v2
     appVersion: 2.3.0-alpha9
-    created: "2024-10-17T06:24:07.109117009Z"
+    created: "2024-10-21T05:33:55.63096968Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -99,11 +119,11 @@ entries:
     name: edge-conductor
     type: application
     urls:
-    - s3://s3-an2-meerkat-dev-edgecond-deploy-tools/helm/edge-conductor-0.2.0.tgz/edge-conductor-0.1.14.tgz
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.14.tgz
     version: 0.1.14
   - apiVersion: v2
     appVersion: 2.3.0-alpha8
-    created: "2024-10-17T06:24:07.108395745Z"
+    created: "2024-10-21T05:33:55.628880966Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -119,11 +139,11 @@ entries:
     name: edge-conductor
     type: application
     urls:
-    - s3://s3-an2-meerkat-dev-edgecond-deploy-tools/helm/edge-conductor-0.2.0.tgz/edge-conductor-0.1.13.tgz
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.13.tgz
     version: 0.1.13
   - apiVersion: v2
     appVersion: 2.3.0-alpha7
-    created: "2024-10-17T06:24:07.107672047Z"
+    created: "2024-10-21T05:33:55.628064926Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -139,11 +159,11 @@ entries:
     name: edge-conductor
     type: application
     urls:
-    - s3://s3-an2-meerkat-dev-edgecond-deploy-tools/helm/edge-conductor-0.2.0.tgz/edge-conductor-0.1.12.tgz
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.12.tgz
     version: 0.1.12
   - apiVersion: v2
     appVersion: 2.3.0-alpha6
-    created: "2024-10-17T06:24:07.105830744Z"
+    created: "2024-10-21T05:33:55.627215298Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -159,11 +179,11 @@ entries:
     name: edge-conductor
     type: application
     urls:
-    - s3://s3-an2-meerkat-dev-edgecond-deploy-tools/helm/edge-conductor-0.2.0.tgz/edge-conductor-0.1.11.tgz
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.11.tgz
     version: 0.1.11
   - apiVersion: v2
     appVersion: 2.3.0-alpha5
-    created: "2024-10-17T06:24:07.103562191Z"
+    created: "2024-10-21T05:33:55.626371154Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -179,11 +199,11 @@ entries:
     name: edge-conductor
     type: application
     urls:
-    - s3://s3-an2-meerkat-dev-edgecond-deploy-tools/helm/edge-conductor-0.2.0.tgz/edge-conductor-0.1.10.tgz
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.10.tgz
     version: 0.1.10
   - apiVersion: v2
     appVersion: 2.3.0-alpha4
-    created: "2024-10-17T06:24:07.117252444Z"
+    created: "2024-10-21T05:33:55.648009132Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -199,11 +219,11 @@ entries:
     name: edge-conductor
     type: application
     urls:
-    - s3://s3-an2-meerkat-dev-edgecond-deploy-tools/helm/edge-conductor-0.2.0.tgz/edge-conductor-0.1.9.tgz
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.9.tgz
     version: 0.1.9
   - apiVersion: v2
     appVersion: 2.2.1
-    created: "2024-10-17T06:24:07.113784529Z"
+    created: "2024-10-21T05:33:55.645094411Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -219,11 +239,11 @@ entries:
     name: edge-conductor
     type: application
     urls:
-    - s3://s3-an2-meerkat-dev-edgecond-deploy-tools/helm/edge-conductor-0.2.0.tgz/edge-conductor-0.1.8.tgz
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.8.tgz
     version: 0.1.8
   - apiVersion: v2
     appVersion: 2.2.1
-    created: "2024-10-17T06:24:07.112872523Z"
+    created: "2024-10-21T05:33:55.642550019Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -239,11 +259,11 @@ entries:
     name: edge-conductor
     type: application
     urls:
-    - s3://s3-an2-meerkat-dev-edgecond-deploy-tools/helm/edge-conductor-0.2.0.tgz/edge-conductor-0.1.7.tgz
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.7.tgz
     version: 0.1.7
   - apiVersion: v2
     appVersion: 2.2.0
-    created: "2024-10-17T06:24:07.112081104Z"
+    created: "2024-10-21T05:33:55.640263143Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -259,6 +279,6 @@ entries:
     name: edge-conductor
     type: application
     urls:
-    - s3://s3-an2-meerkat-dev-edgecond-deploy-tools/helm/edge-conductor-0.2.0.tgz/edge-conductor-0.1.6.tgz
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.6.tgz
     version: 0.1.6
-generated: "2024-10-17T06:24:07.100905752Z"
+generated: "2024-10-21T05:33:55.625417687Z"

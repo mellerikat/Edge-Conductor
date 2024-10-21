@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: pvc-edgecond
-spec:
-  volumeName: pv-edgecond-{{prj-name}}

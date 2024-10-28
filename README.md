@@ -25,7 +25,7 @@ To install the chat with the release name `edge-conductor` in the `edge-conducto
 helm install edge-conductor mellerikat-edge-conductor/edge-conductor [ --version 0.2.0 ] -n edge-conductor
 ```
 
-| Tip: List all releases using helm ls [ -a | -n namepsace ]
+| Tip: List all releases using `helm ls [ -a | -n namepsace ]`
 
 #### Uninstall the chart
 To uninstall/delete the `edge-conductor` release in the `edge-conductor namespace`

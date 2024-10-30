@@ -30,7 +30,7 @@ To install the chart with the release name `edge-conductor` in the `edge-conduct
 helm install edge-conductor mellerikat-edge-conductor/edge-conductor [ --version 0.2.0 ] -n edge-conductor
 ```
 
-| Tip: List all releases using `helm ls [ -a | -n namepsace ]`
+| Tip: List all releases using `helm ls [ -A | -n namepsace ]`
 
 #### Uninstall the chart
 

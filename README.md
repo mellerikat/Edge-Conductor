@@ -55,6 +55,23 @@ helm pull mellerikat-edge-conductor/edge-conductor [ --version 0.2.0 ] [ --untar
 ```
 
 ---
+## Minir Version Release Note
+
+### 0.2.x
+
+* Env 항목 삭제 :
+
+   FIRST_SUPERUSER  |  FIRST_SUPERUSER_PW
+   
+   AIC_HOST  |  AIC_PORT  |  AIC_SUFFIX  |   AIC_WORKSPACE_NAME  |  AIC_USER  |   AIC_PSWD  |   AIC_LINK
+
+* Env 항목 추가:
+
+  UPDATE_CENTER_URL (MANDATORY)
+  
+  SQLALCHEMY_POOL_MAX_OVERFLOW (OPTIONAL)  |   SQLALCHEMY_POOL_SIZE (OPTIONAL)
+
+---
 
 ## Parameters
 

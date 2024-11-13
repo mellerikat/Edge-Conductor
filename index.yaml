@@ -3,6 +3,29 @@ entries:
   edge-conductor:
   - apiVersion: v2
     appVersion: 2.3.0
+    created: "2024-11-13T05:14:07.821944528Z"
+    dependencies:
+    - condition: backend.enabled
+      name: backend
+      repository: ""
+    - condition: frontend.enabled
+      name: frontend
+      repository: ""
+    description: A Helm chart for Edge Conductor
+    digest: 1d5fe2e357e59379b9a7c612bdb060dd2b764de2fe4e4cdff64547637cee326f
+    home: https://github.com/mellerikat/Edge-Conductor
+    maintainers:
+    - email: youngjun.jeon@lge.com
+      name: youngjun.jeon
+    name: edge-conductor
+    sources:
+    - https://github.com/mellerikat/Edge-Conductor
+    type: application
+    urls:
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
+    appVersion: 2.3.0
     created: "2024-10-25T07:11:38.198568689Z"
     dependencies:
     - condition: backend.enabled
@@ -203,7 +226,7 @@ entries:
     version: 0.1.9
   - apiVersion: v2
     appVersion: 2.2.1
-    created: "2024-10-25T07:11:38.193869618Z"
+    created: "2024-11-13T05:14:07.819847755Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -223,7 +246,7 @@ entries:
     version: 0.1.8
   - apiVersion: v2
     appVersion: 2.2.1
-    created: "2024-10-25T07:11:38.191476887Z"
+    created: "2024-11-13T05:14:07.817225936Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -243,7 +266,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 2.2.0
-    created: "2024-10-25T07:11:38.190516396Z"
+    created: "2024-11-13T05:14:07.814840493Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -261,4 +284,4 @@ entries:
     urls:
     - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.6.tgz
     version: 0.1.6
-generated: "2024-10-25T07:11:38.181422206Z"
+generated: "2024-11-13T05:14:07.812099789Z"

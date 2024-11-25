@@ -60,15 +60,16 @@ helm pull mellerikat-edge-conductor/edge-conductor [ --version 0.2.0 ] [ --untar
 
 #### Major Version
 
-**1.0.0**
+*1.0.0*
+
 - global 변수를 지정해서 생성했던, secret, pv, pvc 등을 template을 이용해서 자동으로 생성
 - 대부분 같은 값을 사용하게 됐던 변수에 대해서는 default 값을 지정하여, 값을 입력하지 않도록 함.
 - 사용자가 변경해야하는 config 값을 최소한으로만 노출
 - values.yaml 에서 변경사항이 없는 부분에 대해서는 template 으로 이동하여 노출하지 않도록 함.
 
-### Minor Version
+#### Minor Version
 
-**0.2.x**
+*0.2.x*
 
 **Env 항목 삭제 :**
 - `FIRST_SUPERUSER`, `FIRST_SUPERUSER_PW`

@@ -22,6 +22,22 @@ helm repo add mellerikat-edge-conductor https://mellerikat.github.io/Edge-Conduc
 
 You can then run `helm search repo mellerikat-edge-conductor [ --versions ]` to see the charts.
 
+#### List chart repository
+```console
+helm repo ls
+```
+
+#### Update information of chartmuseum
+To update information of available charts locally from chart repositories
+```console
+helm repo update
+```
+
+#### Display information of chart
+```
+helm show chart mellerikat-edge-conductor [ --version ]
+```
+
 #### Install the chart
 
 To install the chart with the release name `edge-conductor` in the `edge-conductor` namespace

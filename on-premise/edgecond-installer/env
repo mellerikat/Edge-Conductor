@@ -1,9 +1,0 @@
-#!/bin/bash
-
-########################
-### Custom Variables ###
-USER_GROUP="docker"
-USER_NAME="edgecond"
-########################
-
-USER_HOME="/${USER_GROUP}/${USER_NAME}"

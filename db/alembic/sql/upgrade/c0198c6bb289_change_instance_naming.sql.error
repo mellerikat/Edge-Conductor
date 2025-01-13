@@ -1,0 +1,6 @@
+-- Running upgrade 9c05fd19a16c -> c0198c6bb289
+
+ALTER TABLE daily_summary RENAME COLUMN instance_id TO solution_version_id;;
+
+ALTER TABLE stream DROP FOREIGN KEY stream_ibfk_1;;
+

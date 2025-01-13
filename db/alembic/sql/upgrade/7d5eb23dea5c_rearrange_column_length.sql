@@ -1,0 +1,70 @@
+-- Running upgrade c54d6cd17365 -> 7d5eb23dea5c
+
+ALTER TABLE dataset MODIFY name VARCHAR(100) NOT NULL;
+
+ALTER TABLE dataset MODIFY creator VARCHAR(30) NULL;
+
+ALTER TABLE dataset MODIFY updator VARCHAR(30) NULL;
+
+ALTER TABLE edge MODIFY edge_id VARCHAR(100) NOT NULL;
+
+ALTER TABLE edge MODIFY edge_name VARCHAR(100) NULL;
+
+ALTER TABLE edge MODIFY edge_desc VARCHAR(250) NULL;
+
+ALTER TABLE edge MODIFY edge_location VARCHAR(250) NULL;
+
+ALTER TABLE edge MODIFY creator VARCHAR(30) NULL;
+
+ALTER TABLE edge MODIFY updator VARCHAR(30) NULL;
+
+ALTER TABLE edge_update MODIFY creator VARCHAR(30) NULL;
+
+ALTER TABLE edge_update_history MODIFY creator VARCHAR(30) NULL;
+
+ALTER TABLE model MODIFY creator VARCHAR(30) NULL;
+
+ALTER TABLE model MODIFY updator VARCHAR(30) NULL;
+
+ALTER TABLE model_deployment MODIFY creator VARCHAR(30) NULL;
+
+ALTER TABLE setting MODIFY creator VARCHAR(30) NULL;
+
+ALTER TABLE setting MODIFY updator VARCHAR(30) NULL;
+
+ALTER TABLE solution MODIFY solution_name VARCHAR(100) NOT NULL;
+
+ALTER TABLE solution MODIFY creator VARCHAR(30) NULL;
+
+ALTER TABLE solution MODIFY updator VARCHAR(30) NULL;
+
+ALTER TABLE stream MODIFY name VARCHAR(100) NOT NULL;
+
+ALTER TABLE stream MODIFY creator VARCHAR(30) NULL;
+
+ALTER TABLE stream MODIFY updator VARCHAR(30) NULL;
+
+ALTER TABLE stream_schedule MODIFY train_resource_name VARCHAR(128) NULL;
+
+ALTER TABLE stream_schedule MODIFY creator VARCHAR(30) NULL;
+
+ALTER TABLE stream_schedule MODIFY updator VARCHAR(30) NULL;
+
+ALTER TABLE user MODIFY user_id VARCHAR(30) NULL;
+
+ALTER TABLE user MODIFY user_name VARCHAR(100) NULL;
+
+ALTER TABLE user MODIFY user_password VARCHAR(60) NULL;
+
+ALTER TABLE user MODIFY e_mail VARCHAR(250) NULL;
+
+ALTER TABLE user MODIFY company VARCHAR(250) NULL;
+
+ALTER TABLE user MODIFY department VARCHAR(250) NULL;
+
+ALTER TABLE user MODIFY creator VARCHAR(30) NULL;
+
+ALTER TABLE user MODIFY updator VARCHAR(30) NULL;
+
+UPDATE alembic_version SET version_num='7d5eb23dea5c' WHERE alembic_version.version_num = 'c54d6cd17365';
+

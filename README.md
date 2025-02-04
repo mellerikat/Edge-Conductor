@@ -109,7 +109,7 @@ The description of the values
 
 ### Global parameters
 | Name                            | Description                                         | Cloud 인프라 의존 값 | EKS Cluster내 유일값 | 예제                                  |
-| ------------------------------- | --------------------------------------------------- | ------------------- | ------------------- | ------------------------------------- |
+|---------------------------------|-----------------------------------------------------|---------------------|---------------------|---------------------------------------|
 | `serviceAccount.name`           | Edge Conductor 실행될 K8s Service Account Name       | O                  | O                   | `edge-conductor`                       |
 | `nodeSelector.nodegroup`        | Edge Conductor 실행될 Cloud에서 생성된 NodeGroup 정보 | O                  | X                   | `nodegroup: ng-an2-edgecond-mellerikat` |
 
@@ -126,7 +126,7 @@ The description of the values
 | `frontend.service.nodePort`     | frontend Service 포트정보             | O                  | O                    | `31010` |
 | `frontend.replicaCount`         | Deployment안에서 수행될 pod relicaset | X                   | X                   | `1`     |
 
-#### common parameters
+### common parameters
 | Name                                  | Description                                      | Cloud 인프라 의존 값 | EKS Cluster내 유일값 | 예제                                                           |
 | ------------------------------------- | ------------------------------------------------ | ------------------- | ------------------- | -------------------------------------------------------------- |
 | `pv.storageClassName`                 | PersistentVolume에서 사용할 StorageClass 이름     | X                   | X                   | `efs-sc-edgecond`                                              |

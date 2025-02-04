@@ -8,13 +8,13 @@ Edge Conductor is a web-based service designed to provide efficient management a
 
 Once Helm is set up properly, add the repository as follows:
 
-#### Install Helm (prerequisite)
+### Install Helm (prerequisite)
 
 ```console
 sudo snap install helm --classic
 ```
 
-#### Add repository
+### Add repository
 
 ```console
 helm repo add mellerikat-edge-conductor https://mellerikat.github.io/Edge-Conductor/
@@ -22,23 +22,26 @@ helm repo add mellerikat-edge-conductor https://mellerikat.github.io/Edge-Conduc
 
 You can then run `helm search repo mellerikat-edge-conductor [ --versions ]` to see the charts.
 
-#### List chart repository
+### List chart repository
+
 ```console
 helm repo ls
 ```
 
-#### Update information of chartmuseum
+### Update information of chartmuseum
+
 To update information of available charts locally from chart repositories
 ```console
 helm repo update
 ```
 
-#### Display information of chart
+### Display information of chart
+
 ```
 helm show chart mellerikat-edge-conductor [ --version ]
 ```
 
-#### Install the chart
+### Install the chart
 
 To install the chart with the release name `edge-conductor` in the `edge-conductor` namespace
 
@@ -49,7 +52,7 @@ helm install edge-conductor mellerikat-edge-conductor/edge-conductor [ --version
 > Tip: List all releases using `helm ls [ -A | -n namepsace ]`
 
 
-#### Uninstall the chart
+### Uninstall the chart
 
 To uninstall/delete the `edge-conductor` release in the `edge-conductor` namespace
 
@@ -59,13 +62,13 @@ helm delete edge-conductor -n edge-conductor
 
 The command removes all the Kubernetes components associated with the chart and deletes the release.
 
-#### Update chart repository
+### Update chart repository
 
 ```console
 helm repo update mellerikat-edge-conductor
 ```
 
-#### Chart download
+### Chart download
 
 ```console
 helm pull mellerikat-edge-conductor/edge-conductor [ --version 0.2.0 ] [ --untar ]
@@ -74,7 +77,7 @@ helm pull mellerikat-edge-conductor/edge-conductor [ --version 0.2.0 ] [ --untar
 ---
 ## Release Note
 
-#### Major Version
+### Major Version
 
 *1.0.0*
 
@@ -83,7 +86,7 @@ helm pull mellerikat-edge-conductor/edge-conductor [ --version 0.2.0 ] [ --untar
 - 사용자가 변경해야하는 config 값을 최소한으로만 노출
 - values.yaml 에서 변경사항이 없는 부분에 대해서는 template 으로 이동하여 노출하지 않도록 함.
 
-#### Minor Version
+### Minor Version
 
 *0.2.x*
 
@@ -95,30 +98,31 @@ helm pull mellerikat-edge-conductor/edge-conductor [ --version 0.2.0 ] [ --untar
 - `(mandatory) UPDATE_CENTER_URL`
 - `(optional) SQLALCHEMY_POOL_MAX_OVERFLOW` | `(optional) SQLALCHEMY_POOL_SIZE`
 
----
+
 
 ## Parameters
 
+---
 
 The description of the values
 
 
-#### Global parameters
+### Global parameters
 | Name                            | Description                                         | Cloud 인프라 의존 값 | EKS Cluster내 유일값 | 예제                                  |
-| ----                            | --------------------------------------------------- | ------------------- | ------------------- | ------------------------------------- |
+| ------------------------------- | --------------------------------------------------- | ------------------- | ------------------- | ------------------------------------- |
 | `serviceAccount.name`           | Edge Conductor 실행될 K8s Service Account Name       | O                  | O                   | `edge-conductor`                       |
 | `nodeSelector.nodegroup`        | Edge Conductor 실행될 Cloud에서 생성된 NodeGroup 정보 | O                  | X                   | `nodegroup: ng-an2-edgecond-mellerikat` |
 
-#### backend parameters
+### backend parameters
 | Name                            | Description                                 | Cloud 인프라 의존 값 | EKS Cluster내 유일값 | 예제    |
-| ----                            | ------------------------------------------- | ------------------- | ------------------- | ------- |
+| ------------------------------- | ------------------------------------------- | ------------------- | ------------------- | ------- |
 | `backend.service.nodePort`      | backend Service 포트정보                     | O                   | O                   | `31020` |
 | `backend.replicaCount`          | Deployment안에서 수행될 pod relicaset        | X                   | X                   | `2`     |
 | `backend.flower.replicaCount`   | flower Deployment안에서 수행될 pod relicaset | X                   | X                   | `2`     |
 
-#### frontend parameters
+### frontend parameters
 | Name                            | Description                          | Cloud 인프라 의존 값 | EKS Cluster내 유일값 | 예제     |
-| ----                            | ------------------------------------ | ------------------- | ------------------- | -------- |
+| ------------------------------- | ------------------------------------ | ------------------- | ------------------- | -------- |
 | `frontend.service.nodePort`     | frontend Service 포트정보             | O                  | O                    | `31010` |
 | `frontend.replicaCount`         | Deployment안에서 수행될 pod relicaset | X                   | X                   | `1`     |
 
@@ -136,8 +140,6 @@ The description of the values
 | `configMap.data.WORKSPACE`            | 서머리서버에서 사용될 설치된 Edge Conductor고유이름 | X                   | X                   | `edge_conductor_meerkat_dev`                                   |
 | `configMap.data.LDAP_HOST`            | ldap 정보 (미지원인 경우 "")                      | X                   | X                   | `*`                                                            |
 | `configMap.data.UPDATE_CENTER_URL`    | Update Center URL 정보                           | X                   | X                   | `https://xxxxxxxx.execute-api.ap-northeast-2.amazonaws.com/v1` |
-
---- 
 
 The following is the values file in edge-conductor chart version 1.1.0
 
@@ -285,9 +287,9 @@ configMap:
 
 ```
 
----
-
 # Welcome to Edge Conductor !
+
+---
 
 Edge Conductor is a web-based service designed to provide efficient management and maintenance of deep learning inference models operating at the edge, along with integrated monitoring of inference results.
 
@@ -295,19 +297,19 @@ Edge Conductor is a web-based service designed to provide efficient management a
 
 Edge Conductor enhances performance efficiency in operational environments by monitoring inference situations at the edge and managing training datasets, model training, and deployment. Here are the main features of Edge Conductor:
 
-#### Integrated Edge Monitoring
+### Integrated Edge Monitoring
 
 Centralized monitoring of multiple edges performing inference tasks. It collects a wide range of information, including device information and inference performance scores, from the edges.
 
-#### Training Data Management
+### Training Data Management
 
 To achieve more accurate inference, users can create and manage training datasets. These datasets can be generated from various data sources, such as inference data collected from edges, local PC data, and S3 data. The platform will continually add more data sources according to customer requirements. Additionally, it provides relabeling tools for users to redefine label values in training datasets when the solution supports dataset labeling.
 
-#### Utilization of Diverse Solutions
+### Utilization of Diverse Solutions
 
 Users can explore and select from a variety of solutions supported by Mellerikat. Through streams created by these solutions, users can request model training from AI Conductor and manage the deployment of the generated models to the edges.
 
-#### Model Management and Deployment
+### Model Management and Deployment
 
 Users can select training datasets and request updates to models. The performance metrics of the generated models are available for review, and updated models can be deployed to edges to improve inference accuracy.
 

@@ -2,8 +2,8 @@ apiVersion: v1
 entries:
   edge-conductor:
   - apiVersion: v2
-    appVersion: 2.4.0
-    created: "2025-02-13T07:26:19.199407286Z"
+    appVersion: 2.4.1-rc.1
+    created: "2025-03-15T11:19:35.792160828Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -12,7 +12,30 @@ entries:
       name: frontend
       repository: ""
     description: A Helm chart for Edge Conductor
-    digest: 5c9c8c7ced79bcf0b95ba29c933fad5b05ebbbd6c3229afbd8e70844928eb236
+    digest: 84946d4a2be1b0e9b9b6f9f625473e6327bd15215a31589917bbc17128b09c62
+    home: https://github.com/mellerikat/Edge-Conductor
+    maintainers:
+    - email: youngjun.jeon@lge.com
+      name: youngjun.jeon
+    name: edge-conductor
+    sources:
+    - https://github.com/mellerikat/Edge-Conductor
+    type: application
+    urls:
+    - https://mellerikat.github.io/Edge-Conductor/edge-conductor-1.2.21.tgz
+    version: 1.2.21
+  - apiVersion: v2
+    appVersion: 2.4.0
+    created: "2025-03-15T11:19:35.789978621Z"
+    dependencies:
+    - condition: backend.enabled
+      name: backend
+      repository: ""
+    - condition: frontend.enabled
+      name: frontend
+      repository: ""
+    description: A Helm chart for Edge Conductor
+    digest: d63e0405099edecd622f788788a889df0eb49b55a6882b53b02345e826e0fbd3
     home: https://github.com/mellerikat/Edge-Conductor
     maintainers:
     - email: youngjun.jeon@lge.com
@@ -26,7 +49,7 @@ entries:
     version: 1.2.20
   - apiVersion: v2
     appVersion: 2.4.0
-    created: "2025-02-13T07:26:19.197916134Z"
+    created: "2025-03-15T11:19:35.785616068Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -49,7 +72,7 @@ entries:
     version: 1.2.19
   - apiVersion: v2
     appVersion: 2.4.0
-    created: "2025-02-13T07:26:19.19598415Z"
+    created: "2025-03-15T11:19:35.783412444Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -72,7 +95,7 @@ entries:
     version: 1.2.18
   - apiVersion: v2
     appVersion: 2.4.0-rc.6
-    created: "2025-02-13T07:26:19.19474146Z"
+    created: "2025-03-15T11:19:35.781114312Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -95,7 +118,7 @@ entries:
     version: 1.2.17
   - apiVersion: v2
     appVersion: 2.4.0-rc.5
-    created: "2025-02-13T07:26:19.193261264Z"
+    created: "2025-03-15T11:19:35.779087579Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -118,7 +141,7 @@ entries:
     version: 1.2.16
   - apiVersion: v2
     appVersion: 2.4.0-beta.14
-    created: "2025-02-13T07:26:19.191792801Z"
+    created: "2025-03-15T11:19:35.778334032Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -141,7 +164,7 @@ entries:
     version: 1.2.15
   - apiVersion: v2
     appVersion: 2.4.0-beta.13
-    created: "2025-02-13T07:26:19.190288647Z"
+    created: "2025-03-15T11:19:35.777628808Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -164,7 +187,7 @@ entries:
     version: 1.2.14
   - apiVersion: v2
     appVersion: 2.4.0-beta.12
-    created: "2025-02-13T07:26:19.188823241Z"
+    created: "2025-03-15T11:19:35.776937441Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -187,7 +210,7 @@ entries:
     version: 1.2.13
   - apiVersion: v2
     appVersion: 2.4.0-rc.4
-    created: "2025-02-13T07:26:19.187322594Z"
+    created: "2025-03-15T11:19:35.77625548Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -210,7 +233,7 @@ entries:
     version: 1.2.12
   - apiVersion: v2
     appVersion: 2.4.0-beta.11
-    created: "2025-02-13T07:26:19.185843436Z"
+    created: "2025-03-15T11:19:35.775582435Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -233,7 +256,7 @@ entries:
     version: 1.2.11
   - apiVersion: v2
     appVersion: 2.4.0-beta.8
-    created: "2025-02-13T07:26:19.184346896Z"
+    created: "2025-03-15T11:19:35.773691474Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -256,7 +279,7 @@ entries:
     version: 1.2.10
   - apiVersion: v2
     appVersion: 2.4.0-rc.3
-    created: "2025-02-13T07:26:19.205311454Z"
+    created: "2025-03-15T11:19:35.801648084Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -279,7 +302,7 @@ entries:
     version: 1.2.9
   - apiVersion: v2
     appVersion: 2.4.0-beta.7
-    created: "2025-02-13T07:26:19.203594267Z"
+    created: "2025-03-15T11:19:35.800719065Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -302,7 +325,7 @@ entries:
     version: 1.2.8
   - apiVersion: v2
     appVersion: 2.4.0-beta.6
-    created: "2025-02-13T07:26:19.202885942Z"
+    created: "2025-03-15T11:19:35.799768441Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -325,7 +348,7 @@ entries:
     version: 1.2.7
   - apiVersion: v2
     appVersion: 2.4.0-rc.2
-    created: "2025-02-13T07:26:19.202191313Z"
+    created: "2025-03-15T11:19:35.798441792Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -348,7 +371,7 @@ entries:
     version: 1.2.6
   - apiVersion: v2
     appVersion: 2.4.0-beta.5
-    created: "2025-02-13T07:26:19.201492415Z"
+    created: "2025-03-15T11:19:35.79655913Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -371,7 +394,7 @@ entries:
     version: 1.2.5
   - apiVersion: v2
     appVersion: 2.4.0-beta.3
-    created: "2025-02-13T07:26:19.200804999Z"
+    created: "2025-03-15T11:19:35.795857291Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -394,7 +417,7 @@ entries:
     version: 1.2.4
   - apiVersion: v2
     appVersion: 2.4.0-rc.1
-    created: "2025-02-13T07:26:19.200119159Z"
+    created: "2025-03-15T11:19:35.794334105Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -417,7 +440,7 @@ entries:
     version: 1.2.3
   - apiVersion: v2
     appVersion: 2.4.0-beta.2
-    created: "2025-02-13T07:26:19.19867492Z"
+    created: "2025-03-15T11:19:35.787828803Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -440,7 +463,7 @@ entries:
     version: 1.2.2
   - apiVersion: v2
     appVersion: 2.4.0-beta.1
-    created: "2025-02-13T07:26:19.182629579Z"
+    created: "2025-03-15T11:19:35.771521805Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -693,7 +716,7 @@ entries:
     version: 1.1.1
   - apiVersion: v2
     appVersion: 2.3.1
-    created: "2025-02-13T07:26:19.180367836Z"
+    created: "2025-03-15T11:19:35.769291921Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -716,7 +739,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 2.3.0
-    created: "2025-02-13T07:26:19.177708824Z"
+    created: "2025-03-15T11:19:35.766864127Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -739,7 +762,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 2.3.0
-    created: "2025-02-13T07:26:19.176966765Z"
+    created: "2025-03-15T11:19:35.764400551Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -759,7 +782,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 2.3.0-rc3
-    created: "2025-02-13T07:26:19.167776255Z"
+    created: "2025-03-15T11:19:35.757570925Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -779,7 +802,7 @@ entries:
     version: 0.1.17
   - apiVersion: v2
     appVersion: 2.3.0-rc2
-    created: "2025-02-13T07:26:19.165220896Z"
+    created: "2025-03-15T11:19:35.756668046Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -799,7 +822,7 @@ entries:
     version: 0.1.16
   - apiVersion: v2
     appVersion: 2.3.0-rc1
-    created: "2025-02-13T07:26:19.162498797Z"
+    created: "2025-03-15T11:19:35.75572669Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -819,7 +842,7 @@ entries:
     version: 0.1.15
   - apiVersion: v2
     appVersion: 2.3.0-alpha9
-    created: "2025-02-13T07:26:19.1616281Z"
+    created: "2025-03-15T11:19:35.754748552Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -839,7 +862,7 @@ entries:
     version: 0.1.14
   - apiVersion: v2
     appVersion: 2.3.0-alpha8
-    created: "2025-02-13T07:26:19.16078557Z"
+    created: "2025-03-15T11:19:35.752745838Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -859,7 +882,7 @@ entries:
     version: 0.1.13
   - apiVersion: v2
     appVersion: 2.3.0-alpha7
-    created: "2025-02-13T07:26:19.159991041Z"
+    created: "2025-03-15T11:19:35.751662704Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -879,7 +902,7 @@ entries:
     version: 0.1.12
   - apiVersion: v2
     appVersion: 2.3.0-alpha6
-    created: "2025-02-13T07:26:19.159206988Z"
+    created: "2025-03-15T11:19:35.7507134Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -899,7 +922,7 @@ entries:
     version: 0.1.11
   - apiVersion: v2
     appVersion: 2.3.0-alpha5
-    created: "2025-02-13T07:26:19.158385885Z"
+    created: "2025-03-15T11:19:35.74976593Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -919,7 +942,7 @@ entries:
     version: 0.1.10
   - apiVersion: v2
     appVersion: 2.3.0-alpha4
-    created: "2025-02-13T07:26:19.176220721Z"
+    created: "2025-03-15T11:19:35.761475543Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -939,7 +962,7 @@ entries:
     version: 0.1.9
   - apiVersion: v2
     appVersion: 2.2.1
-    created: "2025-02-13T07:26:19.1753162Z"
+    created: "2025-03-15T11:19:35.760470193Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -959,7 +982,7 @@ entries:
     version: 0.1.8
   - apiVersion: v2
     appVersion: 2.2.1
-    created: "2025-02-13T07:26:19.172826611Z"
+    created: "2025-03-15T11:19:35.759536047Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -979,7 +1002,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 2.2.0
-    created: "2025-02-13T07:26:19.170329856Z"
+    created: "2025-03-15T11:19:35.758526196Z"
     dependencies:
     - condition: backend.enabled
       name: backend
@@ -997,4 +1020,4 @@ entries:
     urls:
     - https://mellerikat.github.io/Edge-Conductor/edge-conductor-0.1.6.tgz
     version: 0.1.6
-generated: "2025-02-13T07:26:19.157407577Z"
+generated: "2025-03-15T11:19:35.74858118Z"

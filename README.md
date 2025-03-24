@@ -78,6 +78,32 @@ helm pull mellerikat-edge-conductor/edge-conductor [ --version 0.2.0 ] [ --untar
 
 ### Major Version
 
+
+*1.3.0*
+
+- onPremise 설치를 지원하기 위해 onPremise flag가 생겼습니다.
+  onPremise flag를 true로 설정 시, mysql, redis, registry가 enable 됩니다.
+  secretProvider 대신 secret이 사용됩니다.
+  pv, pvc가 disable 되고, hostPath가 mount 됩니다.
+
+- values-1.2.0.yaml을 사용하여 chart version 1.3.0을 설치할 때, 아래와 같은 에러가 발생합니다.
+  ```console
+  coalesce.go:298: warning: cannot overwrite table with non table for edge-conductor.secret.data (map[MYSQL_PSWD:passwd MYSQL_USER:root])
+  ```
+  values.yaml의 아래 값을 변경하세요.
+
+  **before**
+  ```yaml
+  secret:
+    data: []
+  ```
+
+  **after**
+  ```yaml
+  secret:
+    data: {}
+  ```
+
 *1.0.0*
 
 - global 변수를 지정해서 생성했던, secret, pv, pvc 등을 template을 이용해서 자동으로 생성
